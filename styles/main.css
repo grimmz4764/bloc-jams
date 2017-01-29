@@ -28,7 +28,7 @@ html {
     position: relative; /*positioning will be explained in a resource */
     left: 2rem;
     cursor: pointer; /* produces the finger-pointer icon when you hover 
-                        over the logo /* 
+                        over the logo */
 }
     
 .navbar .links-container {
@@ -67,6 +67,10 @@ html {
 .container {
     margin: 0 auto;
     max-width: 64rem;
+}
+
+.container.narrow {
+    max-width: 56rem;
 }
 
 /* Medium and small screens (640px) */
