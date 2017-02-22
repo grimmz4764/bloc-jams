@@ -29,6 +29,22 @@ var albumPicasso = {
      ]
  };
 
+// Third Example Album
+ var albumKaskade = {
+     title: 'I Remember',
+     artist: 'Kaskade',
+     label: 'Ultra',
+     year: '2014',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'I Remember', duration: '4:41' },
+         { title: 'Atmosphere', duration: '3:51' },
+         { title: 'Angel on my Shoulder', duration: '3:45'},
+         { title: 'Turn it Down', duration: '5:13' },
+         { title: 'Stars Align', duration: '4:17'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template = 
         '<tr class="album-view-song-item">'
@@ -41,14 +57,15 @@ var createSongRow = function(songNumber, songName, songLength) {
     return template;
 };
 
- var setCurrentAlbum = function(album) {
      // #1
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
  
+
+var setCurrentAlbum = function(album) {
      // #2
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
@@ -66,5 +83,16 @@ var createSongRow = function(songNumber, songName, songLength) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+     
+       // Event Listener
+     var albums = [albumPicasso, albumMarconi, albumKaskade];
+     var index = 1;
+     albumImage.addEventListener("click", function(event) {
+        setCurrentAlbum(albums[index]);
+        index ++;
+        if (index == albums.length) {
+            index = 0;
+        }
+     });
  };
     
