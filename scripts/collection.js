@@ -1,6 +1,10 @@
 var collectionItemTemplate = 
       '<div class="collection-album-container column fourth">'
+<<<<<<< HEAD
     + '  <img src="assets/images/album_covers/01.png"/>'
+=======
+    + '   <img src="assets/images/album_covers/01.png"/>'
+>>>>>>> checkpoint-11
     + '  <div class="collection-album-info caption">'
     + '    <p>'
     + '      <a class="album-name" href="album.html"> The Colors </a>'
