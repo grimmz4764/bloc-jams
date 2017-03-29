@@ -114,7 +114,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 };
 $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
-};
+});
 
 
 
